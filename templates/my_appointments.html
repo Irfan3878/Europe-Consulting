@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}Randevularım - Europe Consulting{% endblock %}
+
+{% block content %}
+<div class="bg-slate-950 min-h-screen text-slate-100 py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 border-b border-slate-800 pb-6">
+            <div>
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-widest block mb-1">Müşteri Portalı</span>
+                <h1 class="text-3xl font-extrabold tracking-tight">Kayıtlı Randevularınız</h1>
+                <p class="text-slate-400 text-xs mt-1">Başvurularınız siber güvenlik altyapımızla uçtan uca şifrelenerek takip edilmektedir.</p>
+            </div>
+            <div>
+                <a href="{{ url_for('pages.home') }}#appointment-form" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs px-5 py-3 rounded-xl shadow-lg shadow-blue-500/10 transition-all">
+                    <i class="fa-solid fa-plus"></i> Yeni Randevu Talebi
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+            {% if appointments %}
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 bg-slate-950/50 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                                <th class="p-5">Takip No</th>
+                                <th class="p-5">Başvuru Alanı</th>
+                                <th class="p-5">Randevu Zamanı</th>
+                                <th class="p-5">Durum</th>
+                                <th class="p-5 text-right">İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 text-sm">
+                            {% for app in appointments %}
+                                <tr class="hover:bg-slate-800/30 transition duration-150">
+                                    <td class="p-5 font-mono text-slate-500 text-xs">#EC-{{ app.id }}</td>
+                                    <td class="p-5 font-bold text-slate-200">{{ app.service_type }}</td>
+                                    <td class="p-5 text-slate-400">
+    <i class="fa-regular fa-calendar text-xs mr-1.5 text-slate-500"></i>{{ app.appointment_date.strftime('%d.%m.%Y %H:%M') }}
+</td>
+<td class="p-5">
+    {% if app.status == 'pending' %}
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border bg-blue-500/10 text-blue-400 border-blue-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-current mr-1.5 animate-pulse"></span>
+            Beklemede
+        </span>
+    {% elif app.status == 'approved' %}
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-current mr-1.5 animate-pulse"></span>
+            Onaylandı
+        </span>
+    {% else %}
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border bg-rose-500/10 text-rose-400 border-rose-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-current mr-1.5 animate-pulse"></span>
+            Reddedildi
+        </span>
+    {% endif %}
+</td>
+                                    <td class="p-5 text-right">
+                                        <button onclick="alert('Detaylar güvenli hat üzerinden şifreli olarak yükleniyor...')" class="text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700/50 transition">
+                                            Detayları Gör
+                                        </button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="text-center py-16 px-4">
+                    <div class="w-16 h-16 bg-slate-800/50 text-slate-500 rounded-full flex items-center justify-center text-xl mx-auto mb-4 border border-slate-700/30">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-300">Aktif Randevunuz Bulunmuyor</h3>
+                    <p class="text-slate-500 text-xs max-w-sm mx-auto mt-1">Avrupa vize veya çalışma izni süreçlerinizi başlatmak için hemen ilk başvurunuzu yapın.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="mt-6 flex items-start gap-3 bg-blue-500/5 border border-blue-500/10 p-4 rounded-xl text-xs text-slate-400 leading-relaxed">
+            <i class="fa-solid fa-circle-info text-blue-400 mt-0.5 text-sm"></i>
+            <span><strong>Güvenlik Bilgilendirmesi:</strong> Randevu durum değişiklikleri, konsolosluk güncellemeleri ve evrak onay süreçleri sisteme kayıtlı e-posta adresinize eş zamanlı olarak kriptolu bildirim olarak iletilecektir.</span>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

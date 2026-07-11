@@ -1,0 +1,104 @@
+<!-- templates/service.html -->
+{% extends 'base.html' %}
+{% block title %}Hizmetlerimiz - Europe Consulting{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<div class="bg-slate-950 text-white py-16 px-4 text-center relative overflow-hidden border-b border-slate-800">
+    <div class="absolute top-0 right-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+            Uzmanlık Alanlarımız ve <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Çözümlerimiz</span>
+        </h1>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+            Avrupa yasalarına ve güncel göçmenlik reformlarına tam uyumlu, baştan sona rehberlik hizmetleri.
+        </p>
+    </div>
+</div>
+
+<!-- DETAYLI HİZMET GRİDİ -->
+<div class="max-w-7xl mx-auto px-4 py-20">
+    <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Hizmet 1: AB Mavi Kart -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition duration-300">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">AB Mavi Kart (Blue Card)</h3>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Yükseköğretim mezunu uzmanlar ve bilişim sektörü çalışanları için Avrupa kapılarını açan en prestijli oturum izni. Minimum maaş kriterleri, iş sözleşmesi analizi ve aile birleşimi süreçlerinizi eksiksiz yönetiyoruz.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-2">
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Hızlı kalıcı oturum hakkı takibi</li>
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Eş ve çocuklar için çalışma izni danışmanlığı</li>
+            </ul>
+        </div>
+
+        <!-- Hizmet 2: Mesleki Denklik -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition duration-300">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Diploma ve Mesleki Denklik</h3>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Mühendislik, sağlık, teknik branşlar ve öğretmenlik diplomasına sahip kişilerin Avrupa'daki (özellikle Almanya Anabin/IHK) resmi kurumlardan denklik alma süreçleri. Evrak tercüme ve dosya takibi.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-2">
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Ön değerlendirme ve eksik evrak analizi</li>
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Resmi kurum yazışmalarının yasal takibi</li>
+            </ul>
+        </div>
+
+        <!-- Hizmet 3: Yatırımcı ve Girişimci Vizesi -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition duration-300">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Girişimci & Start-up Vizesi</h3>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Avrupa'da şirket kurmak, şube açmak veya yenilikçi bir iş fikrini hayata geçirmek isteyen iş insanları için business plan (iş planı) hazırlığı, yerel ticaret odası onayları ve sermaye kontrolü rehberliği.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-2">
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Avrupa formatına uygun iş planı yazımı</li>
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Hukuki ve mali alt yapı danışmanlığı</li>
+            </ul>
+        </div>
+
+        <!-- Hizmet 4: Eğitim ve Dil Okulu -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition duration-300">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Eğitim & Yoğun Dil Okulu</h3>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Avrupa'da üniversite, yüksek lisans veya vize garantili yoğun dil okulu kaydı yaptırmak isteyen adaylar için bloke hesap açılışı, motivasyon mektubu yazımı ve konsolosluk mülakat hazırlığı.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-2">
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Okul kabul süreçlerinin yönetimi</li>
+                <li><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Garantili bloke hesap yönlendirmesi</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!-- ALT CTA BANNER -->
+<div class="max-w-7xl mx-auto px-4 mb-20">
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl text-white p-10 text-center shadow-lg shadow-blue-500/10">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">Hangi Hizmetin Size Uygun Olduğunu Bilmiyor Musunuz?</h2>
+        <p class="text-blue-100 text-sm max-w-xl mx-auto mb-6">Profilinizi ücretsiz olarak inceleyelim, sizin için en doğru göçmenlik ve vize yol haritasını birlikte çizelim.</p>
+        <a href="{{ url_for('pages.home') }}#appointment-form" class="bg-white text-slate-900 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 shadow transition inline-block text-sm">
+            Hemen Profil Analizi İsteyin
+        </a>
+    </div>
+</div>
+{% endblock %}

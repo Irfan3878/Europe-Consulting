@@ -1,0 +1,219 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- HERO SECTION (Premium Gradient Mesh & Glassmorphism) -->
+<div class="relative bg-slate-950 text-white overflow-hidden py-24 px-4 border-b border-slate-800">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+        <span class="inline-flex items-center gap-1.5 bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-6 animate-pulse">
+            <i class="fa-solid fa-shield-halved"></i> %100 Güvenli ve Yasal Danışmanlık
+        </span>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+            Avrupa'da Yeni Bir Hayatın <br>
+            <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+                Kapılarını Aralayın
+            </span>
+        </h1>
+        
+        <p class="text-base md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Europe Consulting ile vize, Mavi Kart ve oturum izinleri artık karmaşık değil. Profesyonel siber güvenlik altyapımızla verileriniz korunurken, uzmanlarımız süreçlerinizi jet hızıyla yönetsin.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#appointment-form" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5 text-center">
+                <i class="fa-regular fa-calendar-check mr-2"></i> Hemen Randevu Alın
+            </a>
+            <a href="#services" class="w-full sm:w-auto bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 font-semibold px-8 py-4 rounded-xl transition duration-300 text-center">
+                Hizmetlerimizi İnceleyin
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- İSTATİSTİK ŞERİDİ -->
+<div class="max-w-6xl mx-auto px-4 -mt-10 relative z-20">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-900/90 backdrop-blur-md border border-slate-800 p-6 rounded-2xl shadow-xl text-center">
+        <div>
+            <div class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">%98.4</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Vize Onay Oranı</div>
+        </div>
+        <div class="border-l border-slate-800">
+            <div class="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">5000+</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Mutlu Danışman</div>
+        </div>
+        <div class="border-l border-slate-800 hidden md:block">
+            <div class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">12+</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Avrupa Ülkesi</div>
+        </div>
+        <div class="border-l border-slate-800 hidden md:block">
+            <div class="text-3xl font-bold bg-gradient-to-r from-pink-400 to-emerald-400 bg-clip-text text-transparent">24/7</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Güvenli Takip</div>
+        </div>
+    </div>
+</div>
+
+<!-- HİZMETLER -->
+<div id="services" class="max-w-7xl mx-auto px-4 my-24">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Neden Europe Consulting?</h2>
+        <p class="text-slate-500 mt-3 text-lg">Avrupa standartlarında süreç yönetimi ve kusursuz bürokrasi çözümleri.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-passport"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Mavi Kart & Oturum</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Yazılımcılar, mühendisler ve sağlık çalışanları için Avrupa genelinde yüksek nitelikli çalışma ve oturum izinleri.</p>
+        </div>
+        <div class="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">İş Sözleşmesi & Denklik</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Diplomalarınızın Avrupa kurumlarınca hızlıca tanınması ve yasal iş sözleşmelerinizin mevzuata uygun hazırlanması.</p>
+        </div>
+        <div class="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Kişiselleştirilmiş Süreç</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Her başvuru benzersizdir. Durumunuza özel yapay zeka destekli evrak kontrolü ve eksiksiz dosya hazırlığı.</p>
+        </div>
+    </div>
+</div>
+
+<!-- BAŞARI HİKAYELERİ -->
+<div class="bg-slate-100/60 py-20 border-y border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Kazanılan Yeni Hayatlar</h2>
+            <p class="text-slate-500 mt-2">Süreçlerini başarıyla tamamlayıp Avrupa'ya yerleşen danışmanlarımız.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            {% if stories %}
+                {% for story in stories %}
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/40 relative flex flex-col justify-between hover:shadow-md transition">
+                        <span class="absolute top-4 right-6 text-slate-200 text-5xl font-serif select-none">“</span>
+                        <div class="relative z-10">
+                            <h4 class="text-base font-bold text-blue-600 mb-2">{{ story.title }}</h4>
+                            <p class="text-slate-600 text-sm italic leading-relaxed">"{{ story.content }}"</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                            <!-- 🔑 HATANIN ÇÖZÜMÜ: Buradaki karmaşık inline yapıyı net if-else bloklarına ayırdık -->
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+                                {% if story.client_name %}
+                                    {{ story.client_name[0] }}
+                                {% else %}
+                                    A
+                                {% endif %}
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-800 text-sm">
+                                    {% if story.client_name %}
+                                        {{ story.client_name }}
+                                    {% else %}
+                                        Anonim Müşteri
+                                    {% endif %}
+                                </div>
+                                <div class="text-xs text-slate-400">{{ story.created_at.strftime('%d.%m.%Y') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-span-3 text-center text-slate-400 py-12 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                    <i class="fa-solid fa-quote-right text-4xl text-slate-200 mb-3 block"></i>
+                    <p class="text-sm font-medium">İlk başarı hikayesini yayınlamak için admin paneline göz atın!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- RANDEVU FORMU -->
+<div id="appointment-form" class="max-w-4xl mx-auto px-4 my-24">
+    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden grid md:grid-cols-12">
+        <div class="md:col-span-4 bg-slate-900 text-white p-8 flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-600/20 rounded-full blur-2xl"></div>
+            <div class="relative z-10">
+                <h3 class="text-xl font-bold mb-4">İletişim Ofisi</h3>
+                <p class="text-slate-400 text-xs leading-relaxed mb-6">Formu doldurduktan sonra uzmanlarımız 24 saat içinde detaylı durum analizi için sizinle iletişime geçecektir.</p>
+                
+                <div class="space-y-4 text-xs text-slate-300">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-blue-400 text-sm"></i>
+                        <span>info@europeconsulting.com</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-blue-400 text-sm"></i>
+                        <span>+90 (212) 123 45 67</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-blue-400 text-sm"></i>
+                        <span>Levent, İstanbul / Berlin, Almanya</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-slate-500 text-xs uppercase tracking-widest mt-8 relative z-10">Europe Consulting &copy; 2026</div>
+        </div>
+
+        <form action="{{ url_for('appointments.create') }}" method="POST" class="md:col-span-8 p-8 space-y-5">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div>
+                <h3 class="text-2xl font-bold text-slate-900">Ön Değerlendirme Formu</h3>
+                <p class="text-xs text-slate-400 mt-1">Lütfen bilgilerinizi eksiksiz ve yasal evraklarınızla uyuşacak şekilde girin.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1 tracking-wider">Ad Soyad *</label>
+                    <input type="text" name="fullname" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-slate-50 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1 tracking-wider">E-Posta Adresi *</label>
+                    <input type="email" name="email" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-slate-50 text-sm">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1 tracking-wider">Telefon *</label>
+                    <input type="tel" name="phone" required placeholder="+90" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-slate-50 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1 tracking-wider">Başvuru Alanı *</label>
+                    <select name="service_type" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-slate-50 text-sm">
+                        <option value="Almanya Oturum ve Çalışma İzni">Almanya Oturum ve Çalışma İzni</option>
+                        <option value="Mavi Kart Başvurusu">Mavi Kart Başvurusu</option>
+                        <option value="Avrupa Yatırımcı Vizesi">Avrupa Yatırımcı Vizesi</option>
+                        <option value="Eğitim ve Dil Okulu Vizesi">Eğitim ve Dil Okulu Vizesi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-500 mb-1 tracking-wider">Tercih Edilen Randevu Zamanı *</label>
+                <input type="datetime-local" name="appointment_date" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-slate-50 text-sm">
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-500 mb-1 tracking-wider">Mesajınız / Özgeçmiş Özeti</label>
+                <textarea name="message" rows="3" placeholder="Mesleğiniz, mezuniyetiniz veya sormak istedikleriniz..." class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-slate-50 text-sm"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all duration-300 transform scale-[1.01] text-sm tracking-wide">
+                <i class="fa-solid fa-paper-plane mr-2"></i> Başvuruyu Güvenli Olarak Gönder
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

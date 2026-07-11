@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Randevularım - Europe Consulting{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto my-12 px-4">
+    <div class="flex items-center justify-between mb-8">
+        <div>
+            <h1 class="text-3xl font-bold text-slate-900">Randevu Başvurularım</h1>
+            <p class="text-sm text-slate-500 mt-1">Oturum ofisimize yaptığınız güncel başvuruların durum takibi.</p>
+        </div>
+        <a href="{{ url_for('pages.home') }}#appointment-form" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg shadow text-sm transition">
+            <i class="fa-solid fa-plus mr-1"></i> Yeni Randevu Talebi
+        </a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-slate-900 text-white text-sm font-semibold">
+                    <th class="p-4">Hizmet Türü</th>
+                    <th class="p-4">Planlanan Tarih</th>
+                    <th class="p-4">Talep Tarihi</th>
+                    <th class="p-4 text-center">Durum</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+                {% if appointments %}
+                    {% for app in appointments %}
+                        <tr class="hover:bg-slate-50 transition text-sm">
+                            <td class="p-4 font-semibold text-slate-800">{{ app.service_type }}</td>
+                            <td class="p-4 text-slate-600">{{ app.appointment_date.strftime('%d.%m.%Y %H:%M') }}</td>
+                            <td class="p-4 text-slate-400">{{ app.created_at.strftime('%d.%m.%Y') }}</td>
+                            <td class="p-4 text-center">
+                                {% if app.status == 'pending' %}
+                                    <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm">Beklemede</span>
+                                {% elif app.status == 'approved' %}
+                                    <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm">Onaylandı</span>
+                                {% else %}
+                                    <span class="bg-rose-100 text-rose-800 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm">Reddedildi</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center py-12 text-slate-400">
+                            <i class="fa-solid fa-calendar-xmark text-4xl mb-2 block"></i> Henüz kayıtlı bir randevunuz bulunmuyor.
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

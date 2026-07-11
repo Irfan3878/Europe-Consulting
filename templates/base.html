@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Europe Consulting{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen text-slate-800">
+
+    <nav class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="{{ url_for('pages.home') }}" class="text-xl font-bold tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-passport text-blue-400"></i> EUROPE <span class="text-blue-400">CONSULTING</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="{{ url_for('pages.home') }}" class="hover:text-blue-400 transition">Ana Sayfa</a>
+                    <a href="{{ url_for('pages.service') }}" class="hover:text-blue-400 transition">Hizmetlerimiz</a>
+                    <a href="{{ url_for('pages.contact') }}" class="hover:text-blue-400 transition">İletişim</a>
+                    
+                    {% if current_user.is_authenticated %}
+                        {% if current_user.role == 'admin' %}
+                            <a href="{{ url_for('admin.dashboard') }}" class="bg-red-600 px-3 py-1.5 rounded text-sm font-semibold hover:bg-red-700 transition">Admin Panel</a>
+                        {% else %}
+                            <a href="{{ url_for('appointments.my_appointments') }}" class="hover:text-blue-400 transition">Randevularım</a>
+                        {% endif %}
+                        <span class="text-slate-400 text-sm">| Selam, {{ current_user.username }}</span>
+                        <a href="{{ url_for('auth.logout') }}" class="text-sm bg-slate-800 border border-slate-700 px-3 py-1.5 rounded hover:bg-slate-700 transition">Çıkış Yap</a>
+                    {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="hover:text-blue-400 transition">Giriş Yap</a>
+                        <a href="{{ url_for('auth.register') }}" class="bg-blue-600 px-4 py-2 rounded shadow hover:bg-blue-700 transition font-medium">Kayıt Ol</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto w-full mt-4 px-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="p-4 rounded-lg mb-2 flex items-center justify-between shadow-sm border
+                        {% if category == 'success' %} bg-emerald-50 text-emerald-800 border-emerald-200
+                        {% elif category == 'danger' %} bg-rose-50 text-rose-800 border-rose-200
+                        {% else %} bg-blue-50 text-blue-800 border-blue-200 {% endif %}">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid {% if category == 'success' %}fa-circle-check{% elif category == 'danger' %}fa-circle-exclamation{% else %}fa-circle-info{% endif %}"></i>
+                            <span>{{ message }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-sm py-6 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2026 Europe Consulting Oturum & Vize Ofisi. Tüm Hakları Saklıdır.</p>
+            <p class="text-xs text-slate-600 mt-2

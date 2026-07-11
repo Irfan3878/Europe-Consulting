@@ -1,0 +1,78 @@
+<!-- templates/contact.html -->
+{% extends 'base.html' %}
+{% block title %}İletişim - Europe Consulting{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<div class="bg-slate-950 text-white py-16 px-4 text-center relative overflow-hidden border-b border-slate-800">
+    <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+            Bizimle <span class="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">İletişime Geçin</span>
+        </h1>
+        <p class="text-slate-400 text-sm leading-relaxed">
+            İstanbul ve Berlin ofislerimizle, küresel danışmanlık ağımız üzerinden size bir telefon kadar yakınız.
+        </p>
+    </div>
+</div>
+
+<!-- İLETİŞİM BLOKLARI -->
+<div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-3 gap-8">
+    
+    <!-- Ofis 1 -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center">
+        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg mx-auto mb-4">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">İstanbul Merkez Ofis</h3>
+        <p class="text-slate-500 text-xs leading-relaxed">Levent Plaza, Kat: 14, Büyükdere Caddesi, No: 123 Beşiktaş / İstanbul</p>
+        <div class="text-blue-600 font-semibold text-xs mt-4">+90 (212) 123 45 67</div>
+    </div>
+
+    <!-- Ofis 2 -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center">
+        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center text-lg mx-auto mb-4">
+            <i class="fa-solid fa-building"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">Berlin Şube Ofis</h3>
+        <p class="text-slate-500 text-xs leading-relaxed">Friedrichstraße 95, 10117 Mitte / Berlin - Germany</p>
+        <div class="text-indigo-600 font-semibold text-xs mt-4">+49 (30) 987 65 43</div>
+    </div>
+
+    <!-- Dijital Kanal -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center">
+        <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center text-lg mx-auto mb-4">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">7/24 Dijital Destek</h3>
+        <p class="text-slate-500 text-xs leading-relaxed">Evrak gönderimi, başvuru durumu sorgulama ve acil durum vize prosedürleri için.</p>
+        <div class="text-emerald-600 font-semibold text-xs mt-4">support@europeconsulting.com</div>
+    </div>
+
+</div>
+
+<!-- SIKÇA SORULAN SORULAR (FAQ SECTION) -->
+<div class="max-w-4xl mx-auto px-4 py-12 mb-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-slate-900 mb-8">Sıkça Sorulan Sorular</h2>
+    
+    <div class="space-y-4">
+        <!-- Soru 1 -->
+        <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-xs">
+            <h4 class="font-bold text-slate-900 text-sm mb-2"><i class="fa-regular fa-circle-question text-blue-500 mr-1.5"></i> Danışmanlık süreçleri ortalama ne kadar sürer?</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">Başvurduğunuz vize/oturum türüne ve evraklarınızın denklik durumuna göre süreç 2 ila 6 ay arasında değişiklik gösterebilir. Mavi Kart başvuruları devlet teşvikli olduğu için çok daha hızlı sonuçlanmaktadır.</p>
+        </div>
+
+        <!-- Soru 2 -->
+        <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-xs">
+            <h4 class="font-bold text-slate-900 text-sm mb-2"><i class="fa-regular fa-circle-question text-blue-500 mr-1.5"></i> Dil sertifikası olmadan oturum izni alınabilir mi?</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">Evet, özellikle bilişim sektöründe (Yazılım geliştiriciler, veri analistleri vb.) İngilizce iş sözleşmesi ile dil sertifikası aranmaksızın AB Mavi Kartı ve oturum izni almak yasal olarak mümkündür.</p>
+        </div>
+
+        <!-- Soru 3 -->
+        <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-xs">
+            <h4 class="font-bold text-slate-900 text-sm mb-2"><i class="fa-regular fa-circle-question text-blue-500 mr-1.5"></i> Verilerimin ve kişisel evraklarımın güvenliği nasıl sağlanıyor?</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">Europe Consulting olarak KVKK ve GDPR mevzuatlarına %100 uyumluyuz. Web sitemiz üzerinden ilettiğiniz tüm veriler siber güvenlik kalkanları (CSRF ve parametreli şifreleme alt yapıları) ile korunmaktadır.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

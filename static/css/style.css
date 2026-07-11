@@ -1,0 +1,25 @@
+body{
+    font-family:Arial;
+    margin:0;
+    padding:0;
+}
+
+nav{
+    background:#003366;
+    padding:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+}
+
+.hero{
+    text-align:center;
+    padding:100px;
+}
+
+.hero h1{
+    font-size:60px;
+}

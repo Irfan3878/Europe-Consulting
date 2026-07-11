@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Kayıt Ol - Europe Consulting{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto my-12 p-8 bg-white rounded-xl shadow-md border border-slate-100">
+    <div class="text-center mb-6">
+        <i class="fa-solid fa-user-plus text-4xl text-blue-600 mb-2"></i>
+        <h2 class="text-2xl font-bold text-slate-900">Hesap Oluştur</h2>
+        <p class="text-sm text-slate-500 mt-1">Danışmanlık ve oturum işlemlerinizi takip etmek için kayıt olun.</p>
+    </div>
+
+    <form action="{{ url_for('auth.register') }}" method="POST" class="space-y-4">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">Kullanıcı Adı</label>
+            <input type="text" name="username" required autocomplete="off"
+                   class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">E-Posta Adresi</label>
+            <input type="email" name="email" required autocomplete="off"
+                   class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">Şifre</label>
+            <input type="password" name="password" required
+                   class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-blue-700 transition mt-6">
+            Kayıt İşlemini Tamamla
+        </button>
+    </form>
+
+    <div class="text-center mt-6 text-sm text-slate-600">
+        Zaten hesabınız var mı? <a href="{{ url_for('auth.login') }}" class="text-blue-600 font-semibold hover:underline">Giriş Yapın</a>
+    </div>
+</div>
+{% endblock %}

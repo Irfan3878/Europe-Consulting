@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Kullanıcılar - Admin Panel{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto my-12 px-4">
+    
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-users text-blue-600"></i> Kayıtlı Kullanıcılar
+        </h2>
+        <a href="{{ url_for('admin.dashboard') }}" 
+           class="inline-flex items-center gap-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-medium px-4 py-2 rounded-lg text-sm transition">
+            <i class="fa-solid fa-arrow-left"></i> Panele Dön
+        </a>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+                <thead>
+                    <tr class="bg-slate-100 text-slate-700 font-semibold border-b border-slate-200">
+                        <th class="p-3">ID</th>
+                        <th class="p-3">Kullanıcı Adı</th>
+                        <th class="p-3">E-posta</th>
+                        <th class="p-3 text-center">Rol</th>
+                        <th class="p-3">Kayıt Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    {% if users %}
+                        {% for user in users %}
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3 text-slate-500">{{ user.id }}</td>
+                            <td class="p-3 font-semibold text-slate-900">{{ user.username }}</td>
+                            <td class="p-3 text-slate-600">{{ user.email }}</td>
+                            <td class="p-3 text-center">
+                                {% if user.role == 'admin' %}
+                                    <span class="text-rose-700 bg-rose-50 px-2 py-0.5 rounded text-xs font-medium">Admin</span>
+                                {% else %}
+                                    <span class="text-slate-600 bg-slate-100 px-2 py-0.5 rounded text-xs font-medium">Kullanıcı</span>
+                                {% endif %}
+                            </td>
+                            <td class="p-3 text-xs text-slate-500">{{ user.created_at.strftime('%d.%m.%Y %H:%M') }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center py-6 text-slate-400">Henüz kayıtlı kullanıcı yok.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
