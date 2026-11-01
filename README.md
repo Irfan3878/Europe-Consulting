@@ -1,4 +1,4 @@
-Açıklama (İngilizce)
+Explanation (English)
 
 Web application built with Python and Flask, with a focus on secure development practices. Security features implemented:
 • Password hashing, so user passwords are never stored in plain text
